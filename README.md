@@ -14,4 +14,5 @@
 - El primero sera la modificaccion del archivo portada.html poniendo una estructura basica de  una pagina  html ![GitHub Logo](img/Portada/8.png)
 - Creamos la carpeta portada para las imagenes ![GitHub Logo](img/Portada/9.png)
 - Colocamos las imagenes detro de esa carpeta ![GitHub Logo](img/Portada/10.png)
-- Ahora hacemos los comandos ** git add, comt  y su push 
+-
+
