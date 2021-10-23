@@ -214,26 +214,31 @@ Una vez subidos los cambios, creamos un *pull request* para que se puedan correg
 ### Footer - Vicente
 
 - Git clone
+
 En esta Tarea debemos trabajar en equipo, por lo tanto la manera en la que lo vamos a hacer va a ser clonando el reposotorio remoto original. Con el comando ***git clone***.
 
 ![Imagen1](./img/footer/1.PNG)
 
 - Git branch & git checkout
+
 Una vez clonado el repositorio local cambiamos de directorio a este. Una vez estemos dentro del directorio debemos crear una rama nueva con el comando ***git branch nombre_de la_rama***, esto lo hacemos para ir subiendo los cambios y trabajando en un lugar distinto del mismo proyecto que los demás, esto lo hacemos para no pisarnos el trabajo los unos a los otros. Para hacer esto efectivo debemos cambiar de la rama main en la que nos encontramos a la nueva que acabamos de crear con el comando ***git checkout nombre_de la_rama***.
 
 ![Imagen2](./img/footer/2.PNG)
 
 - Git branch -va
+
 Podemos usar el comando ***git branch -va*** para listar todas las ramas, tanto remotas como locales. Y cómo vemos las locales serían la main y footer_vicente.
 
 ![Imagen3](./img/footer/3.PNG)
 
 - Git add y git commit
+
 Después de realizar los cambios que requería la práctica y he realizado en el vídeo debemos hacer ***git add .***  y después ***git commit*** para dejar estos cambios preparados para subir.
 
 ![Imagen4](./img/footer/4.PNG)
 
 - Git push
+
 Una vez ya tengamos todos los cambios necesarios y estemos preparados para hacer el push, vamos a lanzarlo con el comando ***git push origin nombre_de la_rama_nueva*** para, de esta manera subir los cambios a nuestra rama y crearla en remoto, ya que recordemos que de momento sólo la teniamos en local. Y así cómo está indicado en la segunda captura vemos que los cambios efectivamente se suben a nuestra rama.
 
 ![Imagen5](./img/footer/5.PNG)
