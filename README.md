@@ -1,6 +1,4 @@
-# Tareas 5 y 6 #
-
-## Tarea 5 ##
+# Tarea 5 #
 
 ### Pasos a realizar una subida a una rama "Portada" de Github ###
 
@@ -38,9 +36,7 @@
    - Colocamos las imágenes dentro de la carpeta creada anteriormente 
       ![Subida imágenes](img/portada/10.png)
 
-## Tarea 6: Fork y pull request ##
-
-### Fork y clonación tarea ###
+### Clonación tarea ###
 
 Realizamos un Fork del proyecto principal y descargamos dicho repositorio a nuestra máquina local
 
