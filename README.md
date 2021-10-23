@@ -1,19 +1,50 @@
-# Tarea5
+# Tareas 5 y 6 #
 
-## Pasos a realizar una subida a una rama "Portada" de Github 
-- Usando el comando git clone https://github.com/Malki1989/Tarea5.git y entramos en la caprpeta con el comando cd Tarea5![GitHub Logo](img/portada/1.png)
-- Ahora creamos una nueva Rama que se va llamar Portada  con el comando **git branch portada**![GitHub Logo](img/portada/2.png)
-- Nos ubicams en la nueva rama que hemos creado con el comando **git checkout**![GitHub Logo](img/portada/3.png)
-- Una vez dentro crearemos con el comando sudo **touch / nano /vi** y lo llamaremos Portada.html 
-- Para añadir el archivo al proyecto tenemos que usar el comando **git add Portada.html** ![GitHub Logo](img/portada/4.png)
-- Volvemos a hacer un **git status** y vemos que se ha sincronizado correctamente si aparece en verde![GitHub Logo](img/portada/5.png)
-- Ahora pasamos a registrar cambios en el historial con el comando **git commit -m "Comentario que queramos poner** y vemos que se ha realizado correctamente ![GitHub Logo](img/portada/6.png)
-- Ahora toca subir el archivo a gitlab a traves del comando **git push --set  upstream origin Portada** ![GitHub Logo](img/portada/7.png)
-- Ahora tenemos que hacer 4 comit mas en este caso sera la modificacion del README.md subida de varias imagenens y creacion de carpeta donde se guarda las imagenes 
-- El primero sera la modificaccion del archivo portada.html poniendo una estructura basica de  una pagina  html ![GitHub Logo](img/portada/8.png)
-- Creamos la carpeta portada para las imagenes ![GitHub Logo](img/portada/9.png)
-- Colocamos las imagenes detro de esa carpeta ![GitHub Logo](img/portada/10.png)
+## Tarea 5 ##
 
+### Pasos a realizar una subida a una rama "Portada" de Github ###
+
+- Utilizamos el comando **git clone** con el repositorio correspondiente. Una vez clonada, podemos entrar en ella con el comando **cd nombre-del-repositorio**.
+   ![Clonar tarea](img/portada/1.png)
+
+- Ahora creamos una nueva Rama que se va llamar Portada con el comando **git branch portada**.
+   ![Creación rama](img/portada/2.png)
+
+- Nos ubicamos en la nueva rama que hemos creado con el comando **git checkout**.
+   ![Cambio rama](img/portada/3.png)
+
+- Una vez dentro, crearemos el archivo con el comando de nuestra preferencia **touch/nano/vi** y lo llamaremos portada.html.
+
+- Para añadir el archivo al proyecto tenemos que usar el comando **git add**.
+   ![Añadir archivo](img/portada/4.png)
+
+- Ejecutamos **git status** para comprobar que si se ha sincronizado correctamente. Si aparece en verde, está todo correcto.
+   ![Comprobar sincronizado](img/portada/5.png)
+
+- Ahora pasamos a registrar cambios en el historial con el comando **git commit -m "Comentario que queramos poner** y vemos que se ha realizado correctamente 
+   ![Comando commit](img/portada/6.png)
+
+- Ahora toca subir el archivo a Github a través del comando **git push --set upstream origin portada**.
+   ![Comando push](img/portada/7.png)
+
+- Ahora tenemos que hacer 4 commit más:
+
+   - El primero será la modificación del archivo portada.html poniendo una estructura básica de una página html.
+      ![Estructura HTML](img/portada/8.png)
+
+   - Creamos la carpeta portada para las imágenes. 
+      ![Creación carpeta imágenes](img/portada/9.png)
+
+   - Colocamos las imágenes dentro de la carpeta creada anteriormente 
+      ![Subida imágenes](img/portada/10.png)
+
+## Tarea 6: Fork y pull request ##
+
+### Fork y clonación tarea ###
+
+Realizamos un Fork del proyecto principal y descargamos dicho repositorio a nuestra máquina local
+
+```
 $ git clone https://github.com/Malki1989/Tarea5.git
 Cloning into 'Tarea5'...
 remote: Enumerating objects: 31, done.
@@ -23,11 +54,19 @@ remote: Total 31 (delta 6), reused 18 (delta 1), pack-reused 0
 Receiving objects: 100% (31/31), 5.39 KiB | 788.00 KiB/s, done.
 Resolving deltas: 100% (6/6), done.
 
-# importamos las ramas i los cambios de la estructura
+```
+
+### Importación y configuración de ramas ###
+
+- Primero de todo importamos las ramas y los cambios de la estructura con el comando **fetch**:
+
+```
 $ git fetch
+```
 
-# Comprovamos las ramas que hay
+- Hacemos una comprobación de las ramas del proyecto y que no haya ficheros nuevos que puedan entrar en conflicto.
 
+```
 $ git branch -va
 * main                   5d51307 Merge pull request #2 from Malki1989/Test
   remotes/origin/Content 3c4cab6 Initial commit
@@ -36,8 +75,6 @@ $ git branch -va
   remotes/origin/Test    5418743 Segundo comment
   remotes/origin/header  3c4cab6 Initial commit
   remotes/origin/main    5d51307 Merge pull request #2 from Malki1989/Test
-  
-# Comprovamos que no haya ficheros nuevos
 
 $ git pull
 remote: Enumerating objects: 4, done.
@@ -52,60 +89,68 @@ Fast-forward
  index.html | 4 ++++
  1 file changed, 4 insertions(+)
  create mode 100644 index.html
- 
-# Nos movemos a nuestra rama.
+```
 
+- Nos movemos a la rama de trabajo con el comando **git switch** y apuntamos a la rama del repositorio remoto correspondiente con el comando **git branch --set-upstream-to**
+
+```
 $ git switch -c Content
 Switched to a new branch 'Content'
 
-# Hacemos que los cambios de nuestra nueva rama apunten al remoto correspondiente.
-
 $ git branch --set-upstream-to origin/Content
 Branch 'Content' set up to track remote branch 'Content' from 'origin'.
+```
 
-# Creamos los cambios del projecto
+### Creación, edición y puesta a producción de archivos ###
 
+Creamos y editamos los archivos necesarios para que el proyecto siga adelante. Una vez realizados los cambios, vamos realizando los commit de cada uno de ellos.
+
+- Archivo *content.html*
+
+```
 $ touch content.html
 
-# Editamos el content con la información principal
 $ vsc content.html
 
-# Añadimos al stage
-$git add content.html
+$ git add content.html
 
-# Hacemos el commit
 $ git commit -m "Añadimos el content.html"
 [Content ea2fa5a] Añadimos el content.html
  1 file changed, 14 insertions(+)
  create mode 100644 content.html
+```
  
- # Creamos los estilos del content.html
- $ touch content.css
+- Archivo *content.css*
 
-# Añadimos los estilos del content
+```
+$ touch content.css
+
 $ vsc content.css
 
-# Añadimos al stage
 $ git add css/content.css 
 
-# Hacemos el commit
 $ git commit -m "Añadir content.css"
 [Content f3dfa41] Añadir content.css
  1 file changed, 3 insertions(+)    
- create mode 100644 css/content.css 
+ create mode 100644 css/content.css
+```
 
-# Abrimos el fichero principal
+- Inclusión del archivo content.html al archivo index.html.
+
+```
 $ vsc index.html
 
-# Añadimos al stage
 $ git add index.html
 
-# Hacemos el commit
 $ git commit -m "Incluimos el nuestro fichero en el index"
 [Content 8c0e9b6] Incluimos el nuestro fichero en el index
  1 file changed, 5 insertions(+)
- 
-# Comprovamos i actualizamos los cambios de la rama
+```
+
+
+- Comprobación de actualizaciones en la rama.
+
+```
 $ git pull
 remote: Enumerating objects: 28, done.
 remote: Counting objects: 100% (28/28), done.
@@ -116,19 +161,23 @@ From https://github.com/Malki1989/Tarea5
    2d00370..d8631e8  Portada    -> origin/Portada
 Your configuration specifies to merge with the ref 'refs/heads/Content'
 from the remote, but no such ref was fetched.
+```
 
-# Editamos el content para incluir los css
+- Modificación del archivo content.html para añadir incluya el archivo css correspondiente.
+
+```
 $ vsc content.html
 
-# Añadimos al stage
 $ git add content.html
 
-# Hacemos el commit
 $ git commit -m "Incluimos el css que no incluimos antes en el content.html"
 [Content a4f3978] Incluimos el css que no incluimos antes en el content.html
  1 file changed, 1 insertion(+)
+```
 
-# Añadimos las instruccions de funcionamiento
+- Edición del archivo README.md para incluir las instrucciones de funcionamiento.
+
+```
 $ vsc README.md
 
 # Añadimos al stage
@@ -138,8 +187,13 @@ $ git add README.md
 $ git commit -m "Añadimos instruccions al README.md"
 [Content 2967631] Añadimos instruccions al README.md
  1 file changed, 1 insertion(+), 2 deletions(-)
+```
 
-# Subimos los cambios a la rama
+### Subida de archivos a producción ###
+
+Una vez realizados todos nuestros cambios, realizamos un **git push** para que los suba a nuestra rama.
+
+```
 $ git push 
 Enumerating objects: 19, done.
 Counting objects: 100% (19/19), done.
@@ -156,6 +210,9 @@ remote: Heads up! The branch 'Content' that you pushed to was renamed to 'Malki-
 remote:
 To https://github.com/Malki1989/Tarea5.git
  * [new branch]      Content -> Content
- # Creamos un pull request, corregimos los conflictos i hacemos el merge.
+```
+
+Una vez subidos los cambios, creamos un *pull request* para que se puedan corregir los conflictos surgidos y poder realizar correctamente el *merge*
 
 
+> Revisión y edición final del archivo README hecha por Toni Gomila :v:

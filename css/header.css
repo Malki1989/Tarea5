@@ -1,5 +1,11 @@
 nav.menu {
 padding: 2px;
+color: yellowgreen;
+}
+
+.menu ul li
+{
+    padding-bottom: 5px;
 }
 
 /* Comentarios código CSS
